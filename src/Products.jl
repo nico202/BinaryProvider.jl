@@ -86,6 +86,7 @@ struct LibraryProduct <: Product
 
     function LibraryProduct(prefix::Prefix, libnames::Vector{S},
                             varname::Symbol) where {S <: AbstractString}
+        @show prefix, libnames, varname
         return new(nothing, libnames, varname, prefix)
     end
 
@@ -103,6 +104,7 @@ struct LibraryProduct <: Product
 
     function LibraryProduct(dir_path::AbstractString, libnames::Vector{S},
                             varname::Symbol) where {S <: AbstractString}
+        @show dir_path, libnames, varname
        return new(dir_path, libnames, varname, nothing)
     end
 end
